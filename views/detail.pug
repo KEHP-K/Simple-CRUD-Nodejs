@@ -1,0 +1,32 @@
+extends layout
+block content
+    //- navigation
+    nav(class="navbar navbar-expand-md navbar-dark fixed-top bg-dark")
+        div(class="container-fluid")
+            a(href="/" class="navbar-brand") Opsilo
+            div(class="collapse navbar-collapse")
+                ul(class="navbar-nav mr-auto")
+                    li(class="nav-item active")
+                        a(href="/" class="nav-link") Home
+                    li(class="nav-item active")
+                        a(href="/" class="nav-link") Board
+    
+    div(class="container")
+        br
+        h1(class="display-3") Post
+        hr(class="featurette-divider")
+        div(class="input-group mb-2")
+            span(class="input-group-text") Title
+            input(type="text" class="form-control" placeholder="title" value=post.title readonly)
+        div(class="input-group mb-2")
+            span(class="input-group-text") Author
+            input(type="text" class="form-control" placeholder="Author" value=post.author readonly)
+        div(class="input-group mb-3")
+            span(class="input-group-text") Content
+            textarea(class="form-control" rows=12 readonly) #{post.content}
+        a(href="/" class="btn btn-secondary") Back
+        div(class="float-end")
+            a(href=`/${post.id}/edit` class="btn btn-primary") Edit
+            form(method="POST" action=`/${post.id}` class="danger-form")
+                input(type="hidden" name="_method" value="DELETE")
+                input(type="submit" class="btn btn-danger" value="Delete")

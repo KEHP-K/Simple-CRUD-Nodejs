@@ -1,0 +1,30 @@
+extends layout
+block content
+    //- navigation
+    nav(class="navbar navbar-expand-md navbar-dark fixed-top bg-dark")
+        div(class="container-fluid")
+            a(href="/" class="navbar-brand") Opsilo
+            div(class="collapse navbar-collapse")
+                ul(class="navbar-nav mr-auto")
+                    li(class="nav-item active")
+                        a(href="/" class="nav-link") Home
+                    li(class="nav-item active")
+                        a(href="/" class="nav-link") Board
+    
+    div(class="container")
+        br
+        h1(class="display-3") Board
+        hr(class="featurette-divider")
+        a(href="/new" class="btn btn-secondary float-end mb-3") New
+        table(class="table table-striped text-center")
+            thead(class="table-dark")
+                tr
+                    th(scope="col") #
+                    th(scope="col") Title
+                    th(scope="col") Author
+            tbody
+                each post in posts
+                    tr
+                        td=post.id
+                        td=post.title
+                        td=post.author
