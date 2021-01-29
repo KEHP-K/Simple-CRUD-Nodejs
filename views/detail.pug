@@ -17,13 +17,13 @@ block content
         hr(class="featurette-divider")
         div(class="input-group mb-2")
             span(class="input-group-text") Title
-            input(type="text" class="form-control" placeholder="title" value=post.title readonly)
+            input(type="text" class="form-control bg-light" placeholder="title" value=post.title readonly disabled)
         div(class="input-group mb-2")
             span(class="input-group-text") Author
-            input(type="text" class="form-control" placeholder="Author" value=post.author readonly)
+            input(type="text" class="form-control bg-light" placeholder="Author" value=post.author readonly disabled)
         div(class="input-group mb-3")
             span(class="input-group-text") Content
-            textarea(class="form-control" rows=12 readonly) #{post.content}
+            textarea(class="form-control bg-light" rows=12 readonly disabled) #{post.content}
         a(href="/" class="btn btn-secondary") Back
         div(class="float-end")
             a(href=`/${post.id}/edit` class="btn btn-primary") Edit

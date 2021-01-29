@@ -26,5 +26,6 @@ block content
                 each post in posts
                     tr
                         td=post.id
-                        td=post.title
+                        td
+                          a(href=`/${post.id}` class="post-title")=post.title
                         td=post.author

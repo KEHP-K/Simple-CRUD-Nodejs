@@ -15,15 +15,15 @@ block content
         br
         h1(class="display-3") New Post
         hr(class="featurette-divider")
-        div(class="input-group mb-2")
-            span(class="input-group-text") Title
-            input(type="text" class="form-control" placeholder="title")
-        div(class="input-group mb-2")
-            span(class="input-group-text") Author
-            input(type="text" class="form-control" placeholder="Author")
-        div(class="input-group mb-3")
-            span(class="input-group-text") Content
-            textarea(class="form-control" rows=12)
-        a(href="/" class="btn btn-secondary") Back
-        form(method="POST" action="/" class="float-end")
-            input(type="submit" class="btn btn-primary" value="OK")
+        form(method="POST" action="/")
+            div(class="input-group mb-2")
+                span(class="input-group-text") Title
+                input(type="text" name="title" class="form-control" placeholder="title")
+            div(class="input-group mb-2")
+                span(class="input-group-text") Author
+                input(type="text" name="author" class="form-control" placeholder="Author")
+            div(class="input-group mb-3")
+                span(class="input-group-text") Content
+                textarea(class="form-control" rows=12 name="content")
+            a(href="/" class="btn btn-secondary") Back
+            input(type="submit" class="btn btn-primary float-end" value="OK")

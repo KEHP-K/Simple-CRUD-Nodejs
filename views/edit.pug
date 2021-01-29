@@ -15,16 +15,16 @@ block content
         br
         h1(class="display-3") Edit Post
         hr(class="featurette-divider")
-        div(class="input-group mb-2")
-            span(class="input-group-text") Title
-            input(type="text" class="form-control" placeholder="title" value=post.title)
-        div(class="input-group mb-2")
-            span(class="input-group-text") Author
-            input(type="text" class="form-control" placeholder="Author" value=post.author)
-        div(class="input-group mb-3")
-            span(class="input-group-text") Content
-            textarea(class="form-control" rows=12) #{post.content}
-        a(href=`/${post.id}` class="btn btn-secondary") Back
-        form(method="POST" action=`/${post.id}` class="float-end")
+        form(method="POST" action=`/${post.id}`)
             input(type="hidden" name="_method" value="PUT")
-            input(type="submit" class="btn btn-primary" value="OK")
+            div(class="input-group mb-2")
+                span(class="input-group-text") Title
+                input(type="text" class="form-control" name="title" placeholder="title" value=post.title)
+            div(class="input-group mb-2")
+                span(class="input-group-text") Author
+                input(type="text" class="form-control" name="author" placeholder="Author" value=post.author)
+            div(class="input-group mb-3")
+                span(class="input-group-text") Content
+                textarea(class="form-control" name="content" rows=12) #{post.content}
+            a(href=`/${post.id}` class="btn btn-secondary") Back
+            input(type="submit" class="btn btn-primary float-end" value="OK")
